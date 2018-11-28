@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {StorageService} from '../../services/storage.service';
 
 @Component({
   selector: 'app-demo01',
@@ -25,17 +26,26 @@ export class Demo01Component implements OnInit {
 
   @ViewChild('demo01') demo;
 
-  constructor() {
+  constructor(
+    private storageService: StorageService
+  ) {
     console.log('constructor');
     console.log(typeof this.v4);
 
     // console.log(this.a == '10'); // true
     // console.log(this.a === '10'); // false
 
+    console.log(this.storageService);
+
+    this.storageService.setItem('username', 'admin');
+
   }
 
   ngOnInit() {
+    let name = 'admin';
+    name = 'guest';
     console.log('init');
+    console.log(name);
   }
 
   hello(): void {
