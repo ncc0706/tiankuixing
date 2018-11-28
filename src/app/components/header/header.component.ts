@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit {
 
   msg = 'from child';
 
+  childMsg = 'child message';
+
   constructor() {
   }
 
@@ -30,6 +32,10 @@ export class HeaderComponent implements OnInit {
 
   reqData() {
     this.toParent.emit('子组件调用父组件');
+  }
+
+  c1(): void {
+    alert('子组件执行了');
   }
 
 }

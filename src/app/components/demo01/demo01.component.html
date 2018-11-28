@@ -1,7 +1,11 @@
 <p>
   demo01 works!
+  <button (click)="demo01.c1()">调用子组件的方法.</button>
+  <button (click)="getChildData()">调用子组件</button>
 </p>
 <app-header [message]="message" [hello]="hello" [getDataFromChild]="getDataFromChild"
-            (toParent)="requestData($event)"></app-header>
+            (toParent)="requestData($event)" #demo01></app-header>
 <span>{{message}}</span><br/>
 <button (click)="hello()">click me</button>
+
+

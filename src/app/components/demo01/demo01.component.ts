@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-demo01',
@@ -22,6 +22,8 @@ export class Demo01Component implements OnInit {
   a = 10;
 
   public message = 'hello ts';
+
+  @ViewChild('demo01') demo;
 
   constructor() {
     console.log('constructor');
@@ -50,5 +52,15 @@ export class Demo01Component implements OnInit {
 
   requestData(event): void {
     alert(event);
+  }
+
+
+  // 通过ViewChild调用子组件的方法或获取数据
+  getChildData(): void {
+
+    // 执行子组件的方法
+    // this.demo.c1();
+    // 获取子组件的数据
+    alert(this.demo.childMsg);
   }
 }
