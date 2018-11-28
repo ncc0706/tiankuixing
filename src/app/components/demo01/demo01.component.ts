@@ -63,4 +63,9 @@ export class Demo01Component implements OnInit {
     // 获取子组件的数据
     alert(this.demo.childMsg);
   }
+
+  // 修改子组件的数据.
+  uChildData(): void {
+    this.demo.childMsg = 'ok';
+  }
 }
