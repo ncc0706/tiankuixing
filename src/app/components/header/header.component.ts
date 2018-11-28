@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +13,9 @@ export class HeaderComponent implements OnInit {
 
   @Input() getDataFromChild;
 
+  // Output EventEmitter
+  @Output() toParent = new EventEmitter();
+
   msg = 'from child';
 
   constructor() {
@@ -23,6 +26,10 @@ export class HeaderComponent implements OnInit {
 
   sendData() {
     this.getDataFromChild(this.msg);
+  }
+
+  reqData() {
+    this.toParent.emit('子组件调用父组件');
   }
 
 }

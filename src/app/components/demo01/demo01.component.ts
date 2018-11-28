@@ -47,4 +47,8 @@ export class Demo01Component implements OnInit {
     alert(data);
   }
 
+
+  requestData(event): void {
+    alert(event);
+  }
 }
